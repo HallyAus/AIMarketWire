@@ -11,6 +11,12 @@ Each entry: `[YYYY-MM-DD] Learning — Context`
 
 <!-- Claude: add new entries at the top -->
 
-- [YYYY-MM-DD] [e.g., AlphaESS Modbus register 0x0020 returns SOC as percentage * 10, not raw percentage]
-- [YYYY-MM-DD] [e.g., Shopify webhook verification requires raw body, not parsed JSON]
-- [YYYY-MM-DD] [e.g., Docker Alpine images missing tzdata — need to install for timezone support]
+- [2026-03-01] Vercel env vars can have hidden newlines — LLM_PROVIDER was "claude\n" in dashboard even though it looked clean. Always .trim() env vars used for lookups, or better: delete unnecessary env vars that have code defaults.
+- [2026-03-01] Vercel Git integration is repo-specific — pushing to HallyAus/AI-News didn't trigger deploys because Vercel was connected to HallyAus/AIMarketWire. Always verify `git remote -v` matches the Vercel-connected repo.
+- [2026-03-01] generateStaticParams + API fetch = build timeout — category pages with generateStaticParams tried to fetch from localhost API during build, which isn't running. Use force-dynamic for pages that need runtime API data.
+- [2026-03-01] npm version major auto-creates commit + tag — `npm version patch/minor/major` bumps package.json, creates a git commit, and creates a `vX.Y.Z` tag in one command. Clean working tree required.
+- [2026-02-27] Next.js sitemap with force-dynamic — sitemap.ts fetching from API during static build times out. Must use `export const dynamic = "force-dynamic"` to generate at runtime.
+- [2026-02-27] LLM JSON responses wrapped in markdown — Claude sometimes wraps JSON in ```json``` code blocks. extractJSON() regex handles this: `/```(?:json)?\s*([\s\S]*?)```/`
+- [2026-02-27] Drizzle scorer bug — scorer was referencing `rawArticles.sourceId` but the join was on `sources.id`. Column name mismatch caused silent failures.
+- [2026-02-27] Neon project ID vs endpoint ID — neonctl uses project ID (e.g., "withered-lake-76473178") not the endpoint ID (e.g., "ep-plain-cloud-a77h7kv9"). Run `neonctl projects list` to find it.
+- [2026-02-25] Lazy DB connection via Proxy — Drizzle `drizzle(new Proxy(...))` avoids connection at import time, preventing build failures when DATABASE_URL isn't set.

@@ -9,25 +9,24 @@ _None currently._
 
 ## Up Next
 
-### Immediate — Validate Pipeline
-- [ ] Generate Drizzle migration, test against local Postgres
-- [ ] Run `pnpm db:seed` to populate categories
-- [ ] Run `pnpm ingest --fetch-only` to test RSS fetching
-- [ ] Run full `pnpm ingest` end-to-end with Anthropic API key
-- [ ] Run live for 48 hours, tune relevance threshold
+### Immediate — Operations
+- [ ] Run ingestion batches to clear ~97 unprocessed article backlog
+- [ ] Delete `LLM_PROVIDER` env var from Vercel dashboard (has hidden newline)
+- [ ] Tune relevance threshold after more data (currently 40)
 
-### Week 3 — Frontend
-- [ ] Homepage feed with article cards
-- [ ] Article detail page
-- [ ] Category navigation and ticker filtering
-- [ ] SEO, loading states, mobile responsive
+### Short Term — Enhancements
+- [ ] Add search functionality
+- [ ] Upgrade to Vercel Pro for hourly cron (currently daily)
+- [ ] Set up monitoring/alerting for ingestion failures
+- [ ] GitHub release notes for v1.0.0
+- [ ] Consider Proxmox worker for more frequent ingestion
 
-### Week 4 — Deploy & Harden
-- [ ] Deploy to Vercel + Neon + Railway/Proxmox
-- [ ] Implement caching strategy (target <200ms)
-- [ ] Set up monitoring, alerting, error tracking
-- [ ] Compliance audit (attribution, no trading advice)
-- [ ] Soft launch with analytics
+### Medium Term — Growth
+- [ ] Pagination on homepage and category pages
+- [ ] Email newsletter / alerts
+- [ ] Ticker detail pages
+- [ ] Performance optimisation (target <200ms)
+- [ ] Analytics integration
 
 ## Blocked
 
@@ -35,20 +34,20 @@ _None currently._
 
 ## Done (Recent)
 
-- [x] Write AIMarketWire PRD — 2026-02-25
-- [x] Populate CLAUDE.md with project details — 2026-02-25
-- [x] Log initial architecture decisions (ADR-001 to ADR-006) — 2026-02-25
-- [x] Create 30-day plan aligned with project workflow — 2026-02-25
-- [x] Scaffold Next.js 16 project (TypeScript, App Router, pnpm, Tailwind) — 2026-02-25
-- [x] Design DB schema (sources, raw_articles, articles, tickers, categories) — 2026-02-25
-- [x] Build LLM provider abstraction layer (interface + Claude implementation) — 2026-02-25
-- [x] Docker Compose for local Postgres — 2026-02-25
-- [x] Environment config with zod validation — 2026-02-25
-- [x] Initial commit and push to GitHub — 2026-02-25
-- [x] Research and configure 7 RSS news sources — 2026-02-25
-- [x] Build RSS ingestion service (fetch → dedup → store) — 2026-02-25
-- [x] Build AI relevance scoring pipeline (0–100) — 2026-02-25
-- [x] Build summary generation pipeline — 2026-02-25
-- [x] Build API routes (articles feed, detail, ticker/category filters) — 2026-02-25
-- [x] Build CLI ingest command (`pnpm ingest`) — 2026-02-25
-- [x] Write tests (11 passing) — 2026-02-25
+- [x] Versioning system: semver, git tags, CHANGELOG, version badge in footer — 2026-03-01
+- [x] Shared Footer component replacing 6 duplicated footers — 2026-03-01
+- [x] Security headers (HSTS, X-Frame-Options, etc.) + redirects — 2026-03-01
+- [x] Expanded LLM summary prompt (4-6 sentences) — 2026-03-01
+- [x] Fix LLM_PROVIDER trailing newline bug — 2026-03-01
+- [x] Fix git remote (AI-News → AIMarketWire for Vercel auto-deploy) — 2026-03-01
+- [x] SEO-friendly slug URLs replacing UUIDs — 2026-02-28
+- [x] Full SEO audit and fix: canonical, OG images, JSON-LD, RSS, sitemap — 2026-02-28
+- [x] Article detail, category, about, privacy, terms, 404 pages — 2026-02-28
+- [x] Dynamic OG image generation — 2026-02-28
+- [x] Deploy to Vercel + Neon, connect aimarketwire.ai domain — 2026-02-27
+- [x] Polished dark editorial frontend — 2026-02-27
+- [x] First ingestion: 137 articles fetched, 11 published — 2026-02-27
+- [x] RSS ingestion pipeline, AI scoring, summary generation — 2026-02-25
+- [x] API routes (articles feed + detail with filters) — 2026-02-25
+- [x] Next.js 16 scaffold, Drizzle schema, LLM abstraction — 2026-02-25
+- [x] Project setup, PRD, 30-day plan, ADRs — 2026-02-25

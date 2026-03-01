@@ -11,6 +11,10 @@ Each entry: `[YYYY-MM-DD] Decision — Rationale`
 
 <!-- Claude: add new entries at the top -->
 
+- [2026-02-28] Semver + git tags for versioning — npm version patch/minor/major scripts, NEXT_PUBLIC_APP_VERSION injected at build time, version badge in shared Footer
+- [2026-02-28] Shared Footer component — extracted from 6 duplicated footers into src/components/Footer.tsx with activePath and maxWidth props
+- [2026-02-28] Slug URLs over UUIDs — SEO-friendly, generateUniqueSlug(title, id) appends 8-char UUID suffix for uniqueness
+- [2026-02-28] Homepage ISR (60s) instead of force-dynamic — better performance, API data cached and revalidated
 - [2026-02-27] Domain aimarketwire.ai — registered and connected to Vercel
 - [2026-02-27] Vercel Hobby plan — daily cron (0 0 * * *) for ingestion, hourly requires Pro
 - [2026-02-27] Neon free tier in ap-southeast-2 (Sydney) — low latency for Australian users

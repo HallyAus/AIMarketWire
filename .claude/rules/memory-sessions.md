@@ -8,6 +8,8 @@
 
 <!-- Claude: add new entries at the top. Remove oldest when >20 entries. -->
 
+- [2026-03-01] Versioning + deployment fix — shared Footer with v1.0.0 badge, version scripts (patch/minor/major), CHANGELOG.md, security headers, 301 redirects, expanded LLM prompt, fixed LLM_PROVIDER newline bug, switched git remote to AIMarketWire (Vercel-connected), ran 2 ingestion batches (17 new articles)
+- [2026-02-28] SEO + slugs — full SEO audit/fix (canonical, OG images, JSON-LD, RSS, sitemap), slug URLs replacing UUIDs, article detail/category/about/privacy/terms/404 pages, git tags v0.1.0/v1.0.0
 - [2026-02-27] Go live — deployed to Vercel + Neon, domain aimarketwire.ai, 11 real articles published, daily cron set up, fixed scorer SQL bug (sources import + wrong column reference), updated model to claude-sonnet-4-6, added JSON extraction for markdown-wrapped LLM responses
 - [2026-02-25] Phase 1B/1C pipeline — RSS ingestion from 7 sources, scoring pipeline, summary generation, API routes (articles feed + detail with ticker/category filters), CLI ingest command, 11 tests passing
 - [2026-02-25] Phase 1A scaffold — installed Node.js 24 + pnpm, scaffolded Next.js 16 with Tailwind/TypeScript, created Drizzle schema (7 tables), LLM abstraction layer with Claude provider, Docker Compose, env validation, pushed to GitHub
